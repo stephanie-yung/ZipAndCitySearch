@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import City from './City';
 import './App.css';
 
 class App extends React.Component {
@@ -13,44 +14,29 @@ class App extends React.Component {
     }
   }
 
-  handleZipSearch = (e) => {
+  handleZipChange = (event) => {
     this.setState({
-      zipCode: e.target.value
+      zipCode: event.target.value
     })
   }
 
-  handleCitySearch = (e) => {
-    this.setState({
-      city: e.target.value
-    })
+  handleZipSubmit = (event) => {
+    // alert('Zip was submitted: ' + this.state.zipCode);
+
+    event.preventDefault();
+    this.fetchCities();
   }
 
   fetchCities = async () => {
-    // try {
+    try {
       let zip = this.state.zipCode;
       console.log(zip);
-      let response = await axios.get(`http://ctp-zip-api.herokuapp.com/zip/${zip}`)
-      let citiesObject = await response.json();
-      console.log(citiesObject);
+      let response = await axios.get(`http://ctp-zip-api.herokuapp.com/zip/${zip}`);
+      let responseData = await response.data;
+      console.log(responseData);
 
       this.setState({
-        cities: citiesObject,
-      });
-
-    // } catch (error) {
-    //   console.log(error);
-    // }
-  }
-
-  fetchZipCodes = async () => {
-    try {
-      let city = this.state.city.toUpperCase();
-      let response = await axios.get(`http://ctp-zip-api.herokuapp.com/city/${city}`)
-      let zipCodesObject = await response.json();
-      console.log(zipCodesObject);
-
-      this.setState({
-        cities: zipCodesObject,
+        cities: responseData,
       });
 
     } catch (error) {
@@ -62,14 +48,16 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Zip Code and City Search</h1>
-        <form>
-          <label>Zip Code: </label>
-          <input
-            type="text" 
-            value={this.state.zipCode}
-            onChange={this.handleZipSearch}
-          />
-          <button type="submit" onClick={this.fetchCities}>Search Zip Code</button>
+        <form onSubmit={this.handleZipSubmit}>
+          <label>
+            Zip Code: 
+            <input
+              type="text" 
+              value={this.state.zipCode}
+              onChange={this.handleZipChange}
+            />
+          </label>
+          <input type="submit" value="Search" />
         </form>
 
         <br></br>
@@ -83,6 +71,17 @@ class App extends React.Component {
           />
           <button type="submit" onClick={this.fetchZipCodes}>Search City</button>
         </form>
+
+        {/* render city components */
+          this.state.cities.map( (city) => {
+            return (
+              <div>
+                <City data={city} />
+              </div>
+            )
+          })
+        }
+
       </div>
     );
   }
