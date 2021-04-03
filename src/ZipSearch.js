@@ -46,12 +46,12 @@ class ZipSearch extends React.Component {
       <div className="App">
         <h1>Zip Code Search</h1>
         <form onSubmit={this.handleZipSubmit}>
-          <label>
-            Zip Code: 
+          <label style={{fontWeight: "bold"}}>
+            Zip Code:&nbsp;
             <input
               type="text" 
               value={this.state.zipCode}
-              onChange={this.handleZipChange}
+              onChange={this.handleZipChange} placeholder="Try 10016"
             />
           </label>
           <input type="submit" value="Search" />
