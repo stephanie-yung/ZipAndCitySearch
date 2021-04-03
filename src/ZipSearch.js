@@ -9,21 +9,25 @@ class ZipSearch extends React.Component {
     this.state = {
       zipCode: '', // for value in zip search bar
       cities: [], // list of cities gotten from zip search bar
+      invalidZip: false,
     }
   }
 
+  //When zipcode changes in search bar
   handleZipChange = (event) => {
     this.setState({
       zipCode: event.target.value
     })
   }
 
+  //When zipcode is submitted
   handleZipSubmit = (event) => {
     // alert('Zip was submitted: ' + this.state.zipCode);
     event.preventDefault();
     this.fetchCities();
   }
 
+  //get city information
   fetchCities = async () => {
     try {
       let zip = this.state.zipCode;
@@ -34,10 +38,15 @@ class ZipSearch extends React.Component {
 
       this.setState({
         cities: responseData,
+        invalidZip: false,
       });
 
     } catch (error) {
       console.log(error);
+      
+      this.setState({
+        invalidZip: true
+      })
     }
   }
 
@@ -58,6 +67,9 @@ class ZipSearch extends React.Component {
         </form>
 
         {/* render city components */
+          this.state.invalidZip ?
+          <h7>No results.</h7>
+          :
           this.state.cities.map( (city) => {
             return (
               <div>
@@ -66,6 +78,7 @@ class ZipSearch extends React.Component {
             )
           })
         }
+        
 
       </div>
     );
