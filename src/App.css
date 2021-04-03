@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+.search {
+  padding: 8px;
+}
+button {
+  /* width: 100%; */
+  background-color: black;
+  color: white;
+  padding: 8px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: gray;
+}
