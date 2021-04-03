@@ -4,7 +4,7 @@ const City = ({data}) => {
     return (
         <div>
             <h1>{data.City}, {data.State}</h1>
-            <ul>
+            <ul style={{listStylePosition: "inside"}}>
                 <li>State: {data.State}</li>
                 <li>Location: ({data.Lat}, {data.Long})</li>
                 <li>Population (estimated): {data.EstimatedPopulation}</li>
