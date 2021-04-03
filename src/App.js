@@ -1,10 +1,11 @@
-import logo from './logo.svg'
 import './App.css';
+import ZipSearch from './ZipSearch.js'
 import CitySearchAPI from './citySearch.js';
 
 function App() {
   return (
     <div className="App">
+        <ZipSearch />
         <CitySearchAPI />
     </div>
   );
