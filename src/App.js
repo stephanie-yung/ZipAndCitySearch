@@ -8,8 +8,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       zipCode: '', // for value in zip search bar
-      city: '', // for value in city search bar
-      zipCodes: [], // list of zip codes gotten from city search bar
       cities: [], // list of cities gotten from zip search bar
     }
   }
@@ -22,7 +20,6 @@ class App extends React.Component {
 
   handleZipSubmit = (event) => {
     // alert('Zip was submitted: ' + this.state.zipCode);
-
     event.preventDefault();
     this.fetchCities();
   }
@@ -47,7 +44,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Zip Code and City Search</h1>
+        <h1>Zip Code Search</h1>
         <form onSubmit={this.handleZipSubmit}>
           <label>
             Zip Code: 
@@ -58,18 +55,6 @@ class App extends React.Component {
             />
           </label>
           <input type="submit" value="Search" />
-        </form>
-
-        <br></br>
-
-        <form>
-          <label>City: </label>
-          <input 
-            type="text"
-            value={this.state.city} 
-            onChange={this.handleCitySearch}
-          />
-          <button type="submit" onClick={this.fetchZipCodes}>Search City</button>
         </form>
 
         {/* render city components */
