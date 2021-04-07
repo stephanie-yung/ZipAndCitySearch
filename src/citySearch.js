@@ -16,25 +16,37 @@ class CitySearchAPI extends Component {
     }
 
     handleSearchClick = async () => {
-        let cityName = this.state.city;
-        let linkToAPI = 'http://ctp-zip-api.herokuapp.com/city/' + cityName;
-
         try {
-            let response = await axios.get(linkToAPI);
+            let cityName = this.state.city.toUpperCase();
+
+            let response = await axios.get(`http://ctp-zip-api.herokuapp.com/city/${cityName}`);
             this.setState({apiData: response.data, found: true});
         } catch (error) {
-            //ADD LATER
+                if (error.response) {
+                    console.log(error.response.data); //Not Found
+                    console.log(error.response.status); //404
+                    this.setState({found: false});
+                }
         }
     }
 
     getZipCodes = () => {
         let currData = this.state.apiData;
         let foundMatch = this.state.found;
+        let table = [];
+        let newData = currData.length;
         //found is false when we get 404 error
-        if(!foundMatch){
-            //ADD LATER
+        if(!foundMatch) {
+            table.push(<h7> No Results </h7>);
+            return table;
         } else {
-            return currData;
+            var i;
+            for (i =0; i < newData.length; i+= 5){
+                console.log(newData);
+            }
+            //create a loop where if the length is 5 itll print console.log
+            //else it will split after 5 and then console log
+            return newData;
         }
     }
 
