@@ -34,15 +34,15 @@ class CitySearchAPI extends Component {
         let currData = this.state.apiData;
         let foundMatch = this.state.found;
         let table = [];
-        let newData = currData.length;
+        var newData = [];
         //found is false when we get 404 error
         if(!foundMatch) {
             table.push(<h7> No Results </h7>);
             return table;
         } else {
             var i;
-            for (i =0; i < newData.length; i+= 5){
-                console.log(newData);
+            for (i = 0; i < newData.length; i+= 5){
+                newData.push(newData);
             }
             //create a loop where if the length is 5 itll print console.log
             //else it will split after 5 and then console log
