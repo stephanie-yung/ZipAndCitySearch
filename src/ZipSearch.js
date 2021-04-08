@@ -53,7 +53,7 @@ class ZipSearch extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Zip Code Search</h1>
+        <h1>Zip and City Search</h1>
         <form onSubmit={this.handleZipSubmit}>
           <label style={{fontWeight: "bold"}}>
             Zip Code:&nbsp;
