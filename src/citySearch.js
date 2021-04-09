@@ -7,7 +7,7 @@ class CitySearchAPI extends Component {
         this.state = {
             apiData: [],
             city: "",
-            found: false
+            found: true
         }
     }
 
