@@ -29,6 +29,7 @@ class CitySearchAPI extends Component {
                 }
         }
     }
+    
     getZipCodes = () => {
         let currData = this.state.apiData;
         let foundMatch = this.state.found;
