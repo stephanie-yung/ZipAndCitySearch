@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/zip-city-search/static/css/main.f62f9dda.chunk.css",
+    "main.js": "/zip-city-search/static/js/main.9764eaff.chunk.js",
+    "main.js.map": "/zip-city-search/static/js/main.9764eaff.chunk.js.map",
+    "runtime-main.js": "/zip-city-search/static/js/runtime-main.e692f3de.js",
+    "runtime-main.js.map": "/zip-city-search/static/js/runtime-main.e692f3de.js.map",
+    "static/js/2.897762c4.chunk.js": "/zip-city-search/static/js/2.897762c4.chunk.js",
+    "static/js/2.897762c4.chunk.js.map": "/zip-city-search/static/js/2.897762c4.chunk.js.map",
+    "static/js/3.e564cb06.chunk.js": "/zip-city-search/static/js/3.e564cb06.chunk.js",
+    "static/js/3.e564cb06.chunk.js.map": "/zip-city-search/static/js/3.e564cb06.chunk.js.map",
+    "index.html": "/zip-city-search/index.html",
+    "static/css/main.f62f9dda.chunk.css.map": "/zip-city-search/static/css/main.f62f9dda.chunk.css.map",
+    "static/js/2.897762c4.chunk.js.LICENSE.txt": "/zip-city-search/static/js/2.897762c4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e692f3de.js",
+    "static/js/2.897762c4.chunk.js",
+    "static/css/main.f62f9dda.chunk.css",
+    "static/js/main.9764eaff.chunk.js"
+  ]
+}
