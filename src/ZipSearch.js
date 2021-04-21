@@ -32,7 +32,7 @@ class ZipSearch extends React.Component {
     try {
       let zip = this.state.zipCode;
       console.log(zip);
-      let response = await axios.get(`http://ctp-zip-api.herokuapp.com/zip/${zip}`);
+      let response = await axios.get(`https://ctp-zip-api.herokuapp.com/zip/${zip}`);
       let responseData = await response.data;
       console.log(responseData);
 

@@ -19,7 +19,7 @@ class CitySearchAPI extends Component {
         try {
             let cityName = this.state.city.toUpperCase();
 
-            let response = await axios.get(`http://ctp-zip-api.herokuapp.com/city/${cityName}`);
+            let response = await axios.get(`https://ctp-zip-api.herokuapp.com/city/${cityName}`);
             this.setState({apiData: response.data, found: true});
         } catch (error) {
                 if (error.response) {
