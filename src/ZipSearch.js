@@ -68,7 +68,7 @@ class ZipSearch extends React.Component {
 
         {/* render city components */
           this.state.invalidZip ?
-          <h7>No results.</h7>
+          <h7>No Results</h7>
           :
           this.state.cities.map( (city) => {
             return (
