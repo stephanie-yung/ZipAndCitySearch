@@ -1,4 +1,4 @@
-Deployed page: https://stephanie-yung.github.io/zip-city-search
+# Deployed page: https://stephanie-yung.github.io/zip-city-search
 
 # Getting Started with Create React App
 
